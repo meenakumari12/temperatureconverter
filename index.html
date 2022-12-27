@@ -1,0 +1,111 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset = "utf-8">
+        <link rel="stylesheet" href="regnandlogin.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+
+        <title>
+            Tempature
+        </title>
+    </head>
+    <body style ="background-color: black;">
+
+    
+
+    <table style = "height:400px;width: 400px;border:20px;margin:1px 1px;background-color:whitesmoke;border-radius:10px; box-shadow:5px 5px 6px -7px;margin-left: 400px;margin-top:200px ;">
+        <tr>
+            <td>
+                <h style="padding-left:220px; font-size: 30px;">TemperatureConverter</h>
+            </td>
+            
+
+        </tr>
+        <tr>
+            <td>
+                <p style ="color: black;font-size: 30px;"><b>Fahrenheit</b></p>
+            </td>
+            <td>
+                <p style ="color: black;font-size: 30px;padding-right: 90px;"><b>Celsius</b></p>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td>
+
+                <input type="text"  name="uname" class="input" placeholder="" style="  width:300px;height:50px;margin:10px;border-radius:5px;border-color:white;font-family:cursive;font-weight:bolder" id="fahrenheit" placeholder="Fahrenheit" name="f" value="" />
+            </td>
+            <td>   
+                <input type="text"  name="uname" class="input" placeholder="" style="  width:300px;height:50px;margin:10px;border-radius:5px;border-color:white;font-family:cursive;font-weight:bolder" id="celsius" placeholder="Celsius" name="c" value="" />
+            </td>
+        </tr> 
+        
+        <tr> 
+            <td>       
+                <input type ="submit"   id="convert" value = convert class = "btn btn-primary" style=" font-style:oblique;font-size:20px;width:100px;height:50px;">
+            </td>
+
+            <td>       
+                <input type ="submit"   id="clear" value = reset class = "btn btn-primary" style=" font-style:oblique;font-size:20px;height:50px;width: 100px;">
+            </td>
+        </tr> 
+               
+
+    
+    
+        
+    </table>
+    <script>
+        document.getElementById('convert').onclick = tempConvert;
+        document.getElementById('clear').onclick = clearForm;
+
+        function tempConvert() {
+    
+            var fahrenheit = document.getElementById("fahrenheit").value;
+            var celsius = document.getElementById("celsius").value;
+  
+            if (fahrenheit != '') {
+                celsius = (parseFloat(fahrenheit) - 32) / 1.8;
+            } else {
+                fahrenheit = (parseFloat(celsius) * 1.8) + 32;
+            }
+  
+
+
+            document.getElementById('fahrenheit').value = parseFloat(fahrenheit).toFixed(1);
+            document.getElementById('celsius').value = parseFloat(celsius).toFixed(1);
+        }
+
+
+        function clearForm() {
+            document.getElementById('fahrenheit').value = '';
+            document.getElementById('celsius').value = '';
+        } 
+
+
+
+
+
+
+
+    </script>
+
+    
+
+
+
+
+
+    </body>
+           
+
+
+
+
+
+</html>
+
+
